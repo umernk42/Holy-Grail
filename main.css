@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+.outer-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 90px 1fr;
+    grid-template-areas: 
+        "alias-header alias-header"
+        "alias-InGrid alias-InGrid";
+}
+
+/*Toggle function class*/
+.show-nav{
+    grid-template-areas: 
+    "alias-header alias-header"
+    "alias-nav alias-InGrid";
+}
+/***********************/
+
+header{
+    grid-area: alias-header;
+    background-color: red;
+}
+
+
+nav{
+    grid-area: alias-nav;
+    background-color: green;
+}
+
+.inner-grid{
+    grid-area: alias-InGrid;
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 40px;
+    grid-template-areas:
+        "alias-content"
+        "alias-side"
+        "alias-footer";
+}
+
+.content{
+    background-color:rgb(49, 176, 74);
+    grid-area: alias-content;
+}
+
+.side-bar{
+    background-color:rgba(20, 78, 32, 0.911);
+    grid-area: alias-side;
+}
+
+footer{
+    background-color: blue;
+    grid-area: alias footer;
+}
