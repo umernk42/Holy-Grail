@@ -1,7 +1,7 @@
 
 
 function toggleNav(){
-    const outerGrid = document.querySelector('.outer-grid');
+    const outerGrid = document.querySelector('.inner-grid');
     outerGrid.classList.toggle('show-nav');
 
     const nav = document.querySelector('nav');

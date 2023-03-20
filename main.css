@@ -32,24 +32,15 @@ p{
 .outer-grid{
     display: grid;
     height: 100vh;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 70px 1fr 30px;
     grid-template-columns: 90px 1fr;
     grid-template-areas: 
         "alias-header alias-header"
-        "alias-InGrid alias-InGrid";
+        "alias-InGrid alias-InGrid"
+        "alias-footer alias-footer";
 }
 
-/*Toggle function class*/
-.show-nav{
-    grid-template-areas: 
-    "alias-header alias-header"
-    "alias-nav alias-InGrid";
-}
 
-.hide-nav{
-    display:none;
-}
-/***********************/
 
 header{
     grid-area: alias-header;
@@ -114,9 +105,10 @@ nav a{
     padding-top: 0.3px;
 }
 
-.nav-link:hover{
-    background-color: blue;`
-    cursor:
+.nav-link:hover ,.nav-link:hover h3{
+    background-color: #285555;;
+    color: white;
+    cursor: pointer;
 }
 
 .inner-grid{
@@ -124,14 +116,26 @@ nav a{
     background-color: white;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto 40px;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
         "alias-content"
-        "alias-side"
-        "alias-footer";
+        "alias-side";
     color: #1e4040;
-    /* padding: 20px 5%; */
 }
+
+/*Toggle function class*/
+.show-nav{
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 1fr auto 40px;
+    grid-template-areas: 
+    "alias-nav alias-content"
+    "alias-nav alias-side";
+}
+
+.hide-nav{
+    display:none;
+}
+/***********************/
 
 .content{
     grid-area: alias-content;
@@ -193,11 +197,16 @@ footer{
 }
 
 @media (min-width: 576px){
-    .outer-grid{
-        grid-template-areas: 
-        "alias-header alias-header"
-        "alias-nav alias-InGrid";
+
+    .inner-grid{
+        grid-template-columns: 70px 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "alias-nav alias-content"
+            "alias-nav alias-side";
+        color: #1e4040;
     }
+
 
     .fa-bars{
         display: none;
@@ -206,14 +215,14 @@ footer{
 
 @media (min-width: 992px){
     .inner-grid{
-        grid-template-columns: minmax(auto, 700px) 1fr;
-        grid-template-rows: 1fr 40px;
+        grid-template-columns: 70px minmax(auto, 700px) 1fr;
+        grid-template-rows: 1fr;
         grid-template-areas:
-            "alias-content alias-side"
-            "alias-footer alias-footer";
+            "alias-nav alias-content alias-side"
     }
 
     .side-bar{
+        border: none;
         border-left: 1px solid black;
     }
     
