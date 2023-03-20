@@ -82,10 +82,6 @@ header{
     padding: 0.5rem;
 }
 
-.fa-bars:hover{
-    cursor: pointer;
-    opacity: 0.8rem;
-}
 
 nav{
     grid-area: alias-nav;
@@ -96,10 +92,19 @@ nav{
     border-right: 1px solid black;
 }
 
+nav h3{
+    color: #1e4040;
+}
+
+nav a{
+    color: #1e4040;
+    text-decoration: none;
+}
+
 .nav-link{
     display:flex;
     flex-direction: column;
-    margin-top: 20px;
+    padding: 10px 0;
     align-items: center;
 }
 
@@ -107,6 +112,11 @@ nav{
     text-decoration: none;
     color: #1e4040;
     padding-top: 0.3px;
+}
+
+.nav-link:hover{
+    background-color: blue;`
+    cursor:
 }
 
 .inner-grid{
